@@ -2,7 +2,8 @@ import java.util.Scanner;
 
 public class PlayerSelection {
     public static void main(String[] args) {
-        // Taking User Inputs
+
+        // TAKING USER INPUT
         Scanner user_input = new Scanner(System.in);
 
         System.out.println("Enter your name:");
@@ -21,7 +22,7 @@ public class PlayerSelection {
         int jerseyNum= user_input.nextInt();
 
 
-        // Performing Conversions
+        // PERFORMING CONVERSIONS
         final double POUND = 0.45359237;
         final int METER = 100;
 
@@ -32,20 +33,15 @@ public class PlayerSelection {
         int heightCM_int = (int) heightCM;
 
 
-        // Eligibility Checker
-        Boolean eligible = true;
+        // ELIGIBILITY CHECKER
+        boolean eligible;
 
-        if ((age >= 18 && age <= 35) && (weightKG_int < 90)) {
-            System.out.println("Eligible");
-        }
-        else {
-            eligible = false;
-            System.out.println("Not Eligible");
-        }
+        eligible  = (age >= 18 && age <= 35) && (weightKG_int < 90);
 
 
-        // Category Checker
-        String category = "none";
+
+        // CATEGORY CHECKER
+        String category;
 
         if (age < 20)
             category = "Rising Star";
@@ -56,13 +52,13 @@ public class PlayerSelection {
         else if (age > 30)
             category = "Veteran";
 
-        else {
+        else
             category = "no category";
-        }
+
+
 
         // Player Position and Attacker Jersey
-
-        String playerPosition = "none";
+        String playerPosition;
         String attackerJersey = "No";
 
         switch (jerseyNum) {
@@ -110,18 +106,15 @@ public class PlayerSelection {
         if (age < 20){
             if (weightKG_int < 80) {
                 decision = "Starting Line Up";
-                System.out.println("Starting Line Up");
             }
             else {
                 decision = "Bench";
                 eligible = false;
-                System.out.println("BENCH");
             }
         }
         else {
             decision = "Bench";
             eligible = false;
-            System.out.println("BENCH");
         }
 
         // Final Status Maker
@@ -129,7 +122,7 @@ public class PlayerSelection {
         String eligibility = (eligible) ? "Eligible" : "Not Eligible";
 
 
-        // Final Output
+        // FINAL OUTPUT
         System.out.println("Name: " + name);
         System.out.println("Age: " + age + " (" + category + ")");
         System.out.println("Height: " + heightCM_int + "cm");
@@ -140,13 +133,5 @@ public class PlayerSelection {
         System.out.println("Eligibility: " + eligibility);
         System.out.println("Lineup Decision: " + decision);
         System.out.println("Final Decision: " + finalStatus);
-
-
-
-
-
-
-
-
     }
 }
