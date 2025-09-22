@@ -21,6 +21,7 @@ public class PlayerSelection {
         System.out.println("Enter your jersey number:");
         int jerseyNum= user_input.nextInt();
 
+        user_input.close();
 
         // PERFORMING CONVERSIONS
         final double POUND = 0.45359237;
@@ -133,5 +134,7 @@ public class PlayerSelection {
         System.out.println("Eligibility: " + eligibility);
         System.out.println("Lineup Decision: " + decision);
         System.out.println("Final Decision: " + finalStatus);
+
+
     }
 }
