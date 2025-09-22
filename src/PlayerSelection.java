@@ -34,6 +34,11 @@ public class PlayerSelection {
         int heightCM_int = (int) heightCM;
 
 
+
+        // INCREMENTING AGE PER SEASON
+        age++;
+
+
         // ELIGIBILITY CHECKER
         boolean eligible;
 
@@ -124,6 +129,7 @@ public class PlayerSelection {
 
 
         // FINAL OUTPUT
+        System.out.println("After an APL Season:");
         System.out.println("Name: " + name);
         System.out.println("Age: " + age + " (" + category + ")");
         System.out.println("Height: " + heightCM_int + "cm");
